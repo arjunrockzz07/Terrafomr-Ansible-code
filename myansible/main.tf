@@ -1,7 +1,5 @@
  provider "aws" {
             region = "us-east-1"
-            access_key = "AKIA2BI3KWK56BYT3IYE"
-            secret_key = "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"
         }
         locals {
                 ssh_user         = "ec2-user"
