@@ -1,0 +1,19 @@
+- name: sample ansible
+  hosts: all
+  tasks:
+    - name: "Install Java"
+      command: "{{ item }}"
+      loop:
+        - yum install java-1.8.0-openjdk-devel -y
+        - java -version
+        - java -version
+    - name: "Install Tomcat"
+      command: "{{ item }}"
+      loop:
+        - wget https://apachemirror.wuchna.com/tomcat/tomcat-10/v10.0.6/bin/apache-tomcat-10.0.6.tar.gz
+        - tar -xvf apache-tomcat-10.0.6.tar.gz
+        - mv apache-tomcat-10.0.6.tar.gz /tmp
+        - mv apache-tomcat-10.0.6/ tomcat8
+        - cd /home/ec2-user/tomcat8/conf/
+        - /home/ec2-user/tomcat8/bin/startup.sh 
+        - cd /home/ec2-user/tomcat8/ &&  bin/startup.sh   
